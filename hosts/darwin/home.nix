@@ -12,29 +12,16 @@
   
   # https://github.com/NixOS/nixpkgs/blob/master/pkgs/os-specific/darwin/
   home.packages = with pkgs; [
-      gh
-      # neovim
-      # zoxide
-      eza
-      ripgrep
-      fd
-      # tmux
-      # lazygit
-      # lazydocker
+      # Window manager
+      yabai
+      skhd
 
-
-      # nushell
-      # atuin
-      # carapace
-
+      # Dev tooling
       go
       nodejs
       unzip
       dotnet-sdk_8
       rustup
-
-      yabai
-      skhd
   ];
 
     programs.git = {

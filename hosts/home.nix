@@ -8,12 +8,16 @@
     pkgs.helix
 
     pkgs.lazygit
+    pkgs.gh
     pkgs.lazydocker
 
     pkgs.pfetch
     pkgs.tmux
     pkgs.zoxide
     pkgs.starship
+    pkgs.eza
+    pkgs.ripgrep
+    pkgs.fd
   ];
 
   home.file =

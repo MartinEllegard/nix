@@ -6,8 +6,15 @@
 
 # install packages from nix's official package repository.
 environment.systemPackages = with pkgs; [
+    pkgs.fish
     #wezterm
     mkalias
+];
+
+programs.fish.enable = true;
+
+environment.shells = [
+  pkgs.fish
 ];
 
 fonts.packages = [
