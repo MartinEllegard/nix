@@ -49,20 +49,21 @@
     };
 
     home.file = {
-
         ".yabairc".source = ../../dotfiles-mac/yabairc;
         ".yabairc".onChange = "/etc/profiles/per-user/martin/bin/yabai --restart-service";
 
         ".skhdrc".source = ../../dotfiles-mac/skhdrc;
         ".skhdrc".onChange = "/etc/profiles/per-user/martin/bin/skhd --restart-service";
 
-        #TODO: Fix these
-        ".zsh".source = ~/git/personal/dotfiles/zsh;
-        ".fzfrc".source = ~/git/personal/dotfiles/fzfrc;
-        ".zshrc".source = ~/git/personal/dotfiles/zshrc;
-        ".inputrc".source = ~/git/personal/dotfiles/inputrc;
-        ".zprofile".source = ~/git/personal/dotfiles/profile;
-        ".p10k.zsh".source = ~/git/personal/dotfiles/p10k.zsh;
+        ".config/wezterm".source = ../../dotfiles-mac/wezterm;
+
+        # #TODO: Fix these
+        # ".zsh".source = ~/git/personal/dotfiles/zsh;
+        # ".fzfrc".source = ~/git/personal/dotfiles/fzfrc;
+        # ".zshrc".source = ~/git/personal/dotfiles/zshrc;
+        # ".inputrc".source = ~/git/personal/dotfiles/inputrc;
+        # ".zprofile".source = ~/git/personal/dotfiles/profile;
+        # ".p10k.zsh".source = ~/git/personal/dotfiles/p10k.zsh;
     };
 
     #programs.home-manager.enable = true;
