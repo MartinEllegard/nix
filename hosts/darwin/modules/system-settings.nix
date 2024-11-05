@@ -6,10 +6,8 @@
 
   system = {
 
-    
-
     keyboard.enableKeyMapping = true;
-    keyboard.remapCapsLockToControl = true;
+    keyboard.remapCapsLockToEscape = true;
 
     defaults = {
       # clock
