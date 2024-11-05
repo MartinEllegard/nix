@@ -15,9 +15,11 @@
     pkgs.tmux
     pkgs.zoxide
     pkgs.starship
+
     pkgs.eza
     pkgs.ripgrep
     pkgs.fd
+    pkgs.jq
   ];
 
   home.file =
