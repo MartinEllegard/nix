@@ -42,7 +42,8 @@
         ".skhdrc".source = ../../dotfiles-mac/skhdrc;
         ".skhdrc".onChange = "/etc/profiles/per-user/martin/bin/skhd --restart-service";
 
-        ".config/wezterm".source = ../../dotfiles-mac/wezterm;
+        ".config/wezterm/wezterm.lua".source = ../../dotfiles-mac/wezterm/wezterm.lua;
+        ".config/wezterm/keybindings-mac.lua".source = ../../dotfiles-mac/wezterm/keybindings-mac.lua;
 
         # #TODO: Fix these
         # ".zsh".source = ~/git/personal/dotfiles/zsh;
