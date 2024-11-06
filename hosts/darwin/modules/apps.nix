@@ -15,6 +15,7 @@ programs.fish.enable = true;
 
 environment.shells = [
   pkgs.fish
+  #pkgs.wezterm
 ];
 
 fonts.packages = [
@@ -66,7 +67,7 @@ system.activationScripts.applications.text = let
     # brew install
     brews = [ 
       #"otel-desktop-viewer" 
-      "openjdk"
+      #"openjdk"
     ];
 
     # brew install --cask
