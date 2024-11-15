@@ -94,7 +94,6 @@
 
         home-manager.darwinModules.home-manager
         {
-          home-manager.backupFileExtension = "backup";
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = inputs;
@@ -102,13 +101,6 @@
                 ./home.nix
                 (import shared-flake)
           ];
-          # home-manager.users.martin.modules = [
-          # shared-flake
-          # ];
-          # home-manager.users.martin.imports = [
-          # ./modules/home.nix
-          # shared-flake
-          # ];
         }
       ];
     };
