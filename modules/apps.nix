@@ -11,12 +11,6 @@ environment.systemPackages = with pkgs; [
     mkalias
 ];
 
-programs.fish.enable = true;
-
-environment.shells = [
-  pkgs.fish
-  #pkgs.wezterm
-];
 
 fonts.packages = [
     # Generate nerd font
@@ -40,7 +34,7 @@ system.activationScripts.applications.text = let
             rm -rf /Applications/Nix\ Apps
             mkdir -p /Applications/Nix\ Apps
             find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-            while read src; do
+            while read -r src; do
             app_name=$(basename "$src")
             echo "copying $src" >&2
             ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
@@ -73,13 +67,25 @@ system.activationScripts.applications.text = let
     # brew install --cask
     # these need to be updated manually
     casks = [ 
-      "swiftbar"
+      #"swiftbar"
+      
+      # Dev tools
+      #"homebrew/cask/docker"
+      "beekeeper-studio"
+
+      # Terminal (nixpkg version does not work)
       "wezterm"
+
+      # Socials
+      "discord"
     ];
+
+
 
     # mac app store
     # click
     masApps = {
+      #"adobe-lightroom" = 1451544217;
       # amphetamine = 937984704;
       # kindle = 302584613;
       # tailscale = 1475387142;

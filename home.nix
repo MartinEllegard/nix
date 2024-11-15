@@ -1,9 +1,11 @@
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
+# let shared-flake = inputs.shared-flake;
+# in
 {
-  imports = [
-    ../home.nix
-  ];
+  # imports = [
+  #   shared-flake
+  # ];
   home = {
       username = "martin";
       homeDirectory = "/Users/martin";
@@ -17,11 +19,6 @@
       skhd
 
       # Dev tooling
-      go
-      nodejs
-      unzip
-      dotnet-sdk_8
-      rustup
   ];
 
     programs.git = {
@@ -36,22 +33,11 @@
     };
 
     home.file = {
-        ".yabairc".source = ../../dotfiles-mac/yabairc;
+        ".yabairc".source = ./config/yabairc;
         ".yabairc".onChange = "/etc/profiles/per-user/martin/bin/yabai --restart-service";
 
-        ".skhdrc".source = ../../dotfiles-mac/skhdrc;
+        ".skhdrc".source = ./config/skhdrc;
         ".skhdrc".onChange = "/etc/profiles/per-user/martin/bin/skhd --restart-service";
-
-        ".config/wezterm/wezterm.lua".source = ../../dotfiles-mac/wezterm/wezterm.lua;
-        ".config/wezterm/keybindings-mac.lua".source = ../../dotfiles-mac/wezterm/keybindings-mac.lua;
-
-        # #TODO: Fix these
-        # ".zsh".source = ~/git/personal/dotfiles/zsh;
-        # ".fzfrc".source = ~/git/personal/dotfiles/fzfrc;
-        # ".zshrc".source = ~/git/personal/dotfiles/zshrc;
-        # ".inputrc".source = ~/git/personal/dotfiles/inputrc;
-        # ".zprofile".source = ~/git/personal/dotfiles/profile;
-        # ".p10k.zsh".source = ~/git/personal/dotfiles/p10k.zsh;
     };
 
     #programs.home-manager.enable = true;

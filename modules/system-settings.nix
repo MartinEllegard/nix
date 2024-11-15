@@ -71,6 +71,11 @@
   # create /etc/zshrc that loads the nix-darwin environment,
   # required if you want to use darwin's default shell - zsh
   programs.zsh.enable = true;
+  programs.fish.enable = true;
+
+  environment.shells = [
+    pkgs.fish
+  ];
 
   # load env vars set via home manager
   environment.extraInit = let
