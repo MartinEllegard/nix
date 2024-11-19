@@ -67,7 +67,8 @@ system.activationScripts.applications.text = let
     # brew install --cask
     # these need to be updated manually
     casks = [ 
-      #"swiftbar"
+      # System tools
+      "tg-pro"
       
       # Dev tools
       #"homebrew/cask/docker"
