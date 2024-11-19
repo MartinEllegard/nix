@@ -26,7 +26,8 @@
   outputs = {self, nix-darwin, nixpkgs, nix-homebrew, home-manager, shared-flake, ...}@inputs:
   let
     inherit (inputs.nix-darwin.lib) darwinSystem;
-    inherit (inputs.nixpkgs-unstable.lib) attrValues makeOverridable optionalAttrs singleton;
+    inherit (home-manager.lib.homeManagerConfiguration) standaloneSystem;
+    #inherit (inputs.nixpkgs.lib) attrValues makeOverridable optionalAttrs singleton;
 
     # Configuration for `nixpkgs`
     nixpkgsConfig = {
@@ -34,6 +35,19 @@
     };
   in
   {
+    # Home manager standalone systems aka non nixOs linux
+    homeConfigurations."martin" = standaloneSystem {
+      inherit (inputs.nixpkgs.legacyPackages."x86_64-linux") pkgs;
+      modules = [
+        # Shared home module
+        (import shared-flake)
+
+        # Linux specific home module
+        ./hosts/standalone/home.nix
+      ];
+
+    };
+
     # Output darwin Configuration
     darwinConfigurations = rec {
       martin-mbp = darwinSystem {
