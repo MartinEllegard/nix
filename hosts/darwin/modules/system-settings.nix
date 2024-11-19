@@ -14,6 +14,21 @@
       menuExtraClock.Show24Hour = true;
       menuExtraClock.ShowSeconds = false;
 
+      # Custom User settings
+      # https://medium.com/@zmre/nix-darwin-quick-tip-activate-your-preferences-f69942a93236
+      CustomUserPreferences = {
+
+        # Global domain settings
+        NSGlobalDomain = {
+          # Disable mouse acceleration
+          "com.apple.mouse.scaling" = "-1";
+
+          # Enable developer context menu for web views
+          WebKitDeveloperExtras = true;
+        };
+
+      };
+
       # https://github.com/LnL7/nix-darwin/blob/master/modules/system/defaults/trackpad.nix
       trackpad = {
         # tap to click
@@ -26,6 +41,7 @@
 
       # https://github.com/LnL7/nix-darwin/blob/master/modules/system/defaults/NSGlobalDomain.nix
       NSGlobalDomain = {
+
         # keyboard navigation in dialogs
         AppleKeyboardUIMode = 3;
 
@@ -47,6 +63,9 @@
         tilesize = 32;
         largesize = 96;
       };
+
+      # Mission control spaces are seperate for each monitor
+      spaces.spans-displays = false;
 
       # https://github.com/LnL7/nix-darwin/blob/master/modules/system/defaults/finder.nix
       finder = {
