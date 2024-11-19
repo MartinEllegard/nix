@@ -78,6 +78,9 @@ system.activationScripts.applications.text = let
 
       # Socials
       "discord"
+
+      # Browser
+      "arc"
     ];
 
 
