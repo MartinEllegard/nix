@@ -14,7 +14,7 @@
 
   # Install programs 
   home.packages = [
-    # IMPORTANT: These need to be downloaded by system
+    # IMPORTANT: These need to be downloaded by system (paru / pacman / apt)
     # pkgs.mako
     # pkgs.wl-clipboard
     # pkgs.xclip
