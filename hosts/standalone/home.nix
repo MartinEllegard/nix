@@ -22,7 +22,6 @@
 
     pkgs.gruvbox-gtk-theme
     pkgs.gruvbox-plus-icons
-    #pkgs.beekeeper-studio
     pkgs.obs-studio
 
     # Create nerd font
