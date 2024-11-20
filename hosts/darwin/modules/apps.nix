@@ -82,6 +82,9 @@ system.activationScripts.applications.text = let
 
       # Browser
       "arc"
+
+      # Entertainment
+      "battle-net"
     ];
 
 
