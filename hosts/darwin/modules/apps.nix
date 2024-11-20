@@ -84,7 +84,7 @@ system.activationScripts.applications.text = let
       "arc"
 
       # Entertainment
-      "battle-net"
+      #"battle-net"
     ];
 
 
