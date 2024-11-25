@@ -60,6 +60,8 @@ system.activationScripts.applications.text = let
 
     # brew install
     brews = [ 
+      "docker-compose"
+      "pkg-config"
       #"otel-desktop-viewer" 
       #"openjdk"
     ];
@@ -71,7 +73,7 @@ system.activationScripts.applications.text = let
       "tg-pro"
       
       # Dev tools
-      #"homebrew/cask/docker"
+      "homebrew/cask/docker"
       "beekeeper-studio"
 
       # Terminal (nixpkg version does not work)
@@ -82,6 +84,9 @@ system.activationScripts.applications.text = let
 
       # Browser
       "arc"
+
+      # Note taking
+      "obsidian"
 
       # Entertainment
       #"battle-net"
