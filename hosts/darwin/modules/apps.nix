@@ -75,6 +75,7 @@ system.activationScripts.applications.text = let
       # Dev tools
       "homebrew/cask/docker"
       "beekeeper-studio"
+      "rider"
 
       # Terminal (nixpkg version does not work)
       "wezterm"
@@ -84,9 +85,11 @@ system.activationScripts.applications.text = let
 
       # Browser
       "arc"
+      "zen-browser"
 
       # Note taking
       "obsidian"
+
 
       # Entertainment
       #"battle-net"
