@@ -12,9 +12,11 @@ environment.systemPackages = with pkgs; [
 ];
 
 
-fonts.packages = [
+fonts.packages = with pkgs;[
+    meslo-lgs-nf
+    # pkgs.nerd-fonts.JetBrainsMono
     # Generate nerd font
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ];})
+    # (nerdfonts.override { fonts = [ "JetBrainsMono" ];})
 ];
 
 system.activationScripts.applications.text = let
