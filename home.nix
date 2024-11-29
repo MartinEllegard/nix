@@ -56,6 +56,7 @@
 
       # Fish config
       ".config/fish/config.fish".source = ./config/fish/config.fish;
+      ".config/fish/conf.d/aliases.fish".source = ./config/fish/conf.d/aliases.fish;
       ".config/fish/conf.d/nix.fish".source = ./config/fish/conf.d/nix.fish;
       ".config/fish/conf.d/eza.fish".source = ./config/fish/conf.d/eza.fish;
       ".config/fish/functions/eza_git.fish".source = ./config/fish/functions/eza_git.fish;
