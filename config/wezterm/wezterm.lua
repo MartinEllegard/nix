@@ -24,7 +24,7 @@ return {
 
 	macos_window_background_blur = 30,
 	-- Transparent background
-	window_background_blur = opacity,
+	window_background_opacity = opacity,
 	window_decorations = "RESIZE",
 
 	keys = require("safe-keybindings-mac"),
