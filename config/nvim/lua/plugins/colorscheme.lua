@@ -1,6 +1,6 @@
 -- local theme = os.getenv("THEME") or "catppuccin"
 
-local transparency = os.getenv("TRANSPARENCY") or "false"
+local transparency = os.getenv("TRANSPARENCY") or "true"
 local transparent_mode = false
 if transparency == "true" then
   transparent_mode = true
