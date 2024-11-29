@@ -9,11 +9,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    shared-flake = {
-      url = "github:MartinEllegard/home-manager-shared/main";
-      #inputs.nixpkgs.follows = "nixpkgs";
-      flake = false;
-    };
+    # shared-flake = {
+    #   url = "github:MartinEllegard/home-manager-shared/main";
+    #   #inputs.nixpkgs.follows = "nixpkgs";
+    #   flake = false;
+    # };
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
@@ -23,7 +23,7 @@
     };
   };
 
-  outputs = {self, nix-darwin, nixpkgs, nix-homebrew, home-manager, shared-flake, ...}@inputs:
+  outputs = {self, nix-darwin, nixpkgs, nix-homebrew, home-manager,  ...}@inputs: #shared-flake
   let
     inherit (inputs.nix-darwin.lib) darwinSystem;
     inherit (home-manager.lib.homeManagerConfiguration) standaloneSystem;
@@ -40,10 +40,11 @@
       inherit (inputs.nixpkgs.legacyPackages."x86_64-linux") pkgs;
       modules = [
         # Shared home module
-        (import shared-flake)
+        # (import shared-flake)
+        ./home.nix
 
         # Linux specific home module
-        ./hosts/standalone/home.nix
+        ./systems/standalone/home.nix
       ];
 
     };
@@ -59,10 +60,10 @@
       };
     };
 
-    # Share Module set for all darwin systems
+    # Shared modules set for all darwin systems
     darwinModules = [
       # Default config for all mac os systems
-      ./hosts/darwin/configuration.nix
+      ./systems/darwin/configuration.nix
       # Homebrew setup
       nix-homebrew.darwinModules.nix-homebrew
       {
@@ -90,8 +91,9 @@
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = inputs;
         home-manager.users.martin.imports = [
-          ./hosts/darwin/home.nix
-          (import shared-flake)
+          ./systems/darwin/home.nix
+          # (import shared-flake)
+          ./home.nix
         ];
       }
     ];

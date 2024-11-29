@@ -1,0 +1,13 @@
+# download & extract archive
+# curl -sSL https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v1.39.8/omnisharp-linux-arm64.tar.gz | tar xvzf - -C ~/.omnisharp/bin/
+# make sure that we have the correct permissions
+# chmod 744 ~/.omnisharp/bin/*
+
+[language-server.omni-lsp]
+command = "dotnet"
+args = [ "/Users/martin/.omnisharp/bin/OmniSharp.dll", "--languageserver" ]
+
+[[language]]
+name = "c-sharp"
+auto-format = true
+language-servers = ["omni-lsp"]

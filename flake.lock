@@ -185,25 +185,7 @@
         "mkAlias": "mkAlias",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
-        "nixpkgs": "nixpkgs_3",
-        "shared-flake": "shared-flake"
-      }
-    },
-    "shared-flake": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1732827365,
-        "narHash": "sha256-7W2CdZiL1lZFWCIEGe4sY2DEIiVyaz6MxZ6D6JbH/PU=",
-        "owner": "MartinEllegard",
-        "repo": "home-manager-shared",
-        "rev": "8c3d7c7cf4a776474ec6dbfe3f25ecc3c245683d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "MartinEllegard",
-        "ref": "main",
-        "repo": "home-manager-shared",
-        "type": "github"
+        "nixpkgs": "nixpkgs_3"
       }
     },
     "systems": {

@@ -22,6 +22,7 @@
         NSGlobalDomain = {
           # Disable mouse acceleration
           "com.apple.mouse.scaling" = "-1";
+          "com.apple.mouse.linear" = true;
 
           # Enable developer context menu for web views
           WebKitDeveloperExtras = true;
