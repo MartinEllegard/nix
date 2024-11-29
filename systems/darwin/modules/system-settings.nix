@@ -21,8 +21,10 @@
         # Global domain settings
         NSGlobalDomain = {
           # Disable mouse acceleration
+          # FIXME: Can't really get this to work
+          # Every time I run darwin-rebuild switch, Pointer acceleration is enabled
           "com.apple.mouse.scaling" = "-1";
-          "com.apple.mouse.linear" = true;
+          "com.apple.mouse.linear" = true; 
 
           # Enable developer context menu for web views
           WebKitDeveloperExtras = true;
