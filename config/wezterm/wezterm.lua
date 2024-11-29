@@ -18,7 +18,7 @@ end
 return {
 	-- color_scheme = "Gruvbox dark, medium (base16)",
 	-- color_scheme = "Tokyo Night",
-	color_scheme = "catppuccin",
+	color_scheme = "Catppuccin Mocha",
 	enable_tab_bar = false,
 	font_size = 15.0,
 
