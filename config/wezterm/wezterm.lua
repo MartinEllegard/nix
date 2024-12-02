@@ -16,7 +16,7 @@ else
 end
 
 return {
-	corlor_scheme = theme,
+	color_scheme = theme,
 	-- color_scheme = "Gruvbox dark, medium (base16)",
 	-- color_scheme = "Tokyo Night",
 	-- color_scheme = "Catppuccin Mocha",
