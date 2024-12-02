@@ -1,4 +1,4 @@
--- local theme = os.getenv("THEME") or "catppuccin"
+local theme = os.getenv("THEME") or "catppuccin"
 
 local transparency = os.getenv("TRANSPARENCY") or "true"
 local transparent_mode = false
@@ -72,8 +72,9 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = theme,
-      colorscheme = "catppuccin",
+      colorscheme = theme,
+      -- colorscheme = "catppuccin",
+      -- colorscheme = "gruvbox",
     },
   },
 }

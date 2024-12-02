@@ -6,8 +6,8 @@ set -l os (uname)
 set -e fish_user_paths
 
 # Set theme
-# set --export THEME "gruvbox"
-set --export THEME catppuccin
+set --export THEME gruvbox
+# set --export THEME catppuccin
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
