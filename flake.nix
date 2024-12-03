@@ -9,11 +9,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # shared-flake = {
-    #   url = "github:MartinEllegard/home-manager-shared/main";
-    #   #inputs.nixpkgs.follows = "nixpkgs";
-    #   flake = false;
-    # };
+    disko = {
+      url = "github:nix-community/disko/make-disk-image";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
@@ -23,7 +22,7 @@
     };
   };
 
-  outputs = {self, nix-darwin, nixpkgs, nix-homebrew, home-manager,  ...}@inputs: #shared-flake
+  outputs = {self, nix-darwin, nixpkgs, nix-homebrew, home-manager, disko,  ...}@inputs: #shared-flake
   let
     inherit (inputs.nix-darwin.lib) darwinSystem;
     inherit (home-manager.lib.homeManagerConfiguration) standaloneSystem;
@@ -35,6 +34,7 @@
     };
   in
   {
+    diskoConfigurations.brtfs-dual = import ./disk-config.nix;
     # Home manager standalone systems aka non nixOs linux
     homeConfigurations."martin" = standaloneSystem {
       inherit (inputs.nixpkgs.legacyPackages."x86_64-linux") pkgs;
