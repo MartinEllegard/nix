@@ -78,6 +78,8 @@ system.activationScripts.applications.text = let
       "homebrew/cask/docker"
       "beekeeper-studio"
       "rider"
+      "orbstack"
+      "twingate"
 
       # Terminal (nixpkg version does not work)
       "wezterm"
