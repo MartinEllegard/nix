@@ -1,5 +1,6 @@
 { config, pkgs, inputs, ... }:
 {
+  
   home.username = "martin";
   home.homeDirectory = "/home/martin";
 
@@ -34,6 +35,7 @@
       userName = "Martin Ellegård";
       userEmail = "martin.ellegard@gmail.com";
     };
+    home-manager.enable = true;
   };
 
   # Import dotfiles/configs

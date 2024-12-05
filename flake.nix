@@ -32,6 +32,7 @@
     nixpkgsConfig = {
       config = { allowUnfree = true; };
     };
+
   in
   {
     diskoConfigurations.brtfs-dual = import ./disk-config.nix;
