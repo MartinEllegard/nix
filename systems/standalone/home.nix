@@ -53,7 +53,4 @@
     ".config/gtk-3.0".source = ./config/gtk-3.0;
     ".config/gtk-4.0".source = ./config/gtk-4.0;
   };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }
