@@ -37,20 +37,20 @@
   };
 
   # Import dotfiles/configs
-  # home.file = {
-  #   ".config/hypr".source = ./config/hypr;
-  #   ".config/waybar".source = ./config/waybar;
-  #   ".config/mako".source = ./config/mako;
-  #   ".config/wofi".source = ./config/wofi;
-  #
-  #   # enable wayland support beekeeper-studio
-  #   # ".config/bks-flags.conf".source = ./dotfiles/beekeeper-studio/bks-flags.conf;
-  #
-  #   ".config/foot".source = ./config/foot;
-  #
-  #   ".config/gtk-3.0".source = ./config/gtk-3.0;
-  #   ".config/gtk-4.0".source = ./confgi/gtk-4.0;
-  # };
+  home.file = {
+    ".config/hypr".source = ./config/hypr;
+    ".config/waybar".source = ./config/waybar;
+    ".config/mako".source = ./config/mako;
+    ".config/wofi".source = ./config/wofi;
+
+    # enable wayland support beekeeper-studio
+    # ".config/bks-flags.conf".source = ./dotfiles/beekeeper-studio/bks-flags.conf;
+
+    ".config/foot".source = ./config/foot;
+
+    ".config/gtk-3.0".source = ./config/gtk-3.0;
+    ".config/gtk-4.0".source = ./confgi/gtk-4.0;
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

@@ -36,7 +36,7 @@
   {
     diskoConfigurations.brtfs-dual = import ./disk-config.nix;
     # Home manager standalone systems aka non nixOs linux
-    homeConfigurations."martin" = standaloneSystem {
+    homeConfigurations."martin" = home-manager.lib.homeManagerConfiguration {
       inherit (inputs.nixpkgs.legacyPackages."x86_64-linux") pkgs;
       modules = [
         # Shared home module
