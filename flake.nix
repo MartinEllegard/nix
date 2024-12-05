@@ -12,7 +12,7 @@
     disko = {
       url = "github:nix-community/disko/make-disk-image";
       inputs.nixpkgs.follows = "nixpkgs";
-    }
+    };
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
