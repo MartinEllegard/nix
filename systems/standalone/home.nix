@@ -20,12 +20,12 @@
     # pkgs.xclip
     # pkgs.waybar
 
-    pkgs.gruvbox-gtk-theme
-    pkgs.gruvbox-plus-icons
-    pkgs.obs-studio
+    # pkgs.gruvbox-gtk-theme
+    # pkgs.gruvbox-plus-icons
+    # pkgs.obs-studio
 
     # Create nerd font
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    # (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   programs = {
