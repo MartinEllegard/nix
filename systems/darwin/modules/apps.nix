@@ -7,6 +7,7 @@
 # install packages from nix's official package repository.
 environment.systemPackages = with pkgs; [
     pkgs.fish
+    pkgs.wireguard-tools
     #wezterm
     mkalias
 ];
