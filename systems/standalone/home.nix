@@ -15,6 +15,8 @@
 
   # Install programs 
   home.packages = [
+    #docker-compose # Needs to be downloaded by pacman
+    
     # IMPORTANT: These need to be downloaded by system (paru / pacman / apt)
     # pkgs.mako
     # pkgs.wl-clipboard
