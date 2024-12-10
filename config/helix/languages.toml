@@ -11,3 +11,15 @@ args = [ "/Users/martin/.omnisharp/bin/OmniSharp.dll", "--languageserver" ]
 name = "c-sharp"
 auto-format = true
 language-servers = ["omni-lsp"]
+
+[language-server.tailwindcss-ls]
+config = { userLanguages = { templ = "html" } }
+
+[formaters.templ-format]
+[[language]]
+name = "templ"
+auto-format = true
+language-servers = [ "templ", "tailwindcss-ls" ]
+lan
+
+
