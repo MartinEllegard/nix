@@ -9,10 +9,10 @@ alias vim='nvim'
 alias svi='sudo nvim'
 if test "$os" = Darwin
     alias helix="hx"
-else if test "$os" = Linux
-    # do things for Linux
-    alias hx="helix"
-else
+    # else if test "$os" = Linux
+    #     # do things for Linux
+    #     alias hx="helix"
+    # else
     # do things for other operating systems
     #alias hvim="helix"
 end
