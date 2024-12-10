@@ -17,6 +17,7 @@
 
     # Terminal candy
     pkgs.pfetch
+    pkgs.fastfetch
     pkgs.starship
 
     # Terminal utils
