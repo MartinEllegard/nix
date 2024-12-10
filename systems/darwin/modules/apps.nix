@@ -79,8 +79,8 @@ system.activationScripts.applications.text = let
       "homebrew/cask/docker"
       "beekeeper-studio"
       "rider"
-      "orbstack"
-      "twingate"
+      #"orbstack"
+      #"twingate"
 
       # Terminal (nixpkg version does not work)
       "wezterm"
@@ -89,7 +89,7 @@ system.activationScripts.applications.text = let
       "discord"
 
       # Browser
-      "arc"
+      #"arc"
       "zen-browser"
 
       # Note taking

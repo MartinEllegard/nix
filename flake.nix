@@ -3,18 +3,35 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
+    # Mac modules
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    # home-manager
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    disko = {
-      url = "github:nix-community/disko/make-disk-image";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+
+    # disko = {
+    #   url = "github:nix-community/disko/make-disk-image";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
 
     mkAlias = {
       url = "github:cdmistman/mkAlias";
@@ -78,11 +95,18 @@
           # User owning the Homebrew prefix
           user = "martin";
 
-          # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
-          mutableTaps = true;
+            taps = {
+              "homebrew/homebrew-core" = inputs.homebrew-core;
+              "homebrew/homebrew-cask" = inputs.homebrew-cask;
+              "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
+            };
 
-          autoMigrate = true;
-        };
+            # Optional: Enable fully-declarative tap management
+            #
+            # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
+            mutableTaps = false;
+            autoMigrate = true;
+            };
       }
 
       # Home manager setup
