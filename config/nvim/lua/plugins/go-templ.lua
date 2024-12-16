@@ -20,7 +20,7 @@ return {
     },
     {
       "williamboman/mason.nvim",
-      opts = { ensure_installed = { "goimports", "gofumpt", "delve", "templ", "htmx", "html-lsp" } },
+      opts = { ensure_installed = { "goimports", "gofumpt", "delve", "templ", "htmx-lsp", "html-lsp" } },
     },
     {
       "stevearc/conform.nvim",
