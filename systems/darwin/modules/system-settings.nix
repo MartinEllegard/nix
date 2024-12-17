@@ -1,4 +1,5 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
+{
 
   # https://daiderd.com/nix-darwin/manual/index.html#sec-options
 
@@ -24,7 +25,7 @@
           # FIXME: Can't really get this to work
           # Every time I run darwin-rebuild switch, Pointer acceleration is enabled
           "com.apple.mouse.scaling" = "-1";
-          "com.apple.mouse.linear" = true; 
+          "com.apple.mouse.linear" = true;
 
           # Enable developer context menu for web views
           WebKitDeveloperExtras = true;
@@ -100,10 +101,11 @@
   ];
 
   # load env vars set via home manager
-  environment.extraInit = let
-    homeManagerSessionVars =
-      "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh";
-    in ''
+  environment.extraInit =
+    let
+      homeManagerSessionVars = "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh";
+    in
+    ''
       [[ -f ${homeManagerSessionVars} ]] && source ${homeManagerSessionVars}
     '';
 }

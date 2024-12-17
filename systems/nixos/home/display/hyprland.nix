@@ -1,5 +1,11 @@
 # Tell it how it is
-{ pkgs, home, inputs, ... }: {
+{
+  pkgs,
+  home,
+  inputs,
+  ...
+}:
+{
   home.sessionVariables = {
     # WLR_NO_HARDWARE_CURSORS = 1;
     NIXOS_OZONE_WL = 1;

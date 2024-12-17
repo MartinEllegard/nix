@@ -39,89 +39,99 @@
     };
   };
 
-  outputs = {self, nix-darwin, nixpkgs, nix-homebrew, home-manager, disko,  ...}@inputs: #shared-flake
-  let
-    inherit (inputs.nix-darwin.lib) darwinSystem;
-    inherit (home-manager.lib.homeManagerConfiguration) standaloneSystem;
-    #inherit (inputs.nixpkgs.lib) attrValues makeOverridable optionalAttrs singleton;
+  outputs =
+    {
+      self,
+      nix-darwin,
+      nixpkgs,
+      nix-homebrew,
+      home-manager,
+      disko,
+      ...
+    }@inputs: # shared-flake
+    let
+      inherit (inputs.nix-darwin.lib) darwinSystem;
+      inherit (home-manager.lib.homeManagerConfiguration) standaloneSystem;
+      #inherit (inputs.nixpkgs.lib) attrValues makeOverridable optionalAttrs singleton;
 
-    # Configuration for `nixpkgs`
-    nixpkgsConfig = {
-      config = { allowUnfree = true; };
-    };
-
-  in
-  {
-    diskoConfigurations.brtfs-dual = import ./disk-config.nix;
-    # Home manager standalone systems aka non nixOs linux
-    homeConfigurations."martin" = home-manager.lib.homeManagerConfiguration {
-      inherit (inputs.nixpkgs.legacyPackages."x86_64-linux") pkgs;
-      modules = [
-        # Shared home module
-        # (import shared-flake)
-        ./home.nix
-
-        # Linux specific home module
-        ./systems/standalone/home.nix
-      ];
-
-    };
-
-    # Output darwin Configuration
-    darwinConfigurations = rec {
-      martin-mbp = darwinSystem {
-        system = "aarch64-darwin";
-        specialArgs = { inherit inputs; };
-        modules = self.darwinModules ++ [
-          ./hosts/martin-mbp.nix
-        ];
+      # Configuration for `nixpkgs`
+      nixpkgsConfig = {
+        config = {
+          allowUnfree = true;
+        };
       };
-    };
 
-    # Shared modules set for all darwin systems
-    darwinModules = [
-      # Default config for all mac os systems
-      ./systems/darwin/configuration.nix
-      # Homebrew setup
-      nix-homebrew.darwinModules.nix-homebrew
-      {
-        nix-homebrew = {
-          # Install Homebrew under the default prefix
-          enable = true;
+    in
+    {
+      diskoConfigurations.brtfs-dual = import ./disk-config.nix;
+      # Home manager standalone systems aka non nixOs linux
+      homeConfigurations."martin" = home-manager.lib.homeManagerConfiguration {
+        inherit (inputs.nixpkgs.legacyPackages."x86_64-linux") pkgs;
+        modules = [
+          # Shared home module
+          # (import shared-flake)
+          ./home.nix
 
-          # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
-          enableRosetta = true;
+          # Linux specific home module
+          ./systems/standalone/home.nix
+        ];
 
-          # User owning the Homebrew prefix
-          user = "martin";
+      };
 
+      # Output darwin Configuration
+      darwinConfigurations = rec {
+        martin-mbp = darwinSystem {
+          system = "aarch64-darwin";
+          specialArgs = { inherit inputs; };
+          modules = self.darwinModules ++ [
+            ./hosts/martin-mbp.nix
+          ];
+        };
+      };
+
+      # Shared modules set for all darwin systems
+      darwinModules = [
+        # Default config for all mac os systems
+        ./systems/darwin/configuration.nix
+        # Homebrew setup
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            # Install Homebrew under the default prefix
+            enable = true;
+
+            # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
+            enableRosetta = true;
+
+            # User owning the Homebrew prefix
+            user = "martin";
+
+            # Optional: Enable fully-declarative tap management
             taps = {
               "homebrew/homebrew-core" = inputs.homebrew-core;
               "homebrew/homebrew-cask" = inputs.homebrew-cask;
               "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
             };
 
-            # Optional: Enable fully-declarative tap management
-            #
             # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
             mutableTaps = false;
             autoMigrate = true;
-            };
-      }
+          };
+        }
 
-      # Home manager setup
-      home-manager.darwinModules.home-manager
-      {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = inputs;
-        home-manager.users.martin.imports = [
-          ./systems/darwin/home.nix
-          # (import shared-flake)
-          ./home.nix
-        ];
-      }
-    ];
+        # Home manager setup
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = inputs;
+          home-manager.users.martin.imports = [
+            ./systems/darwin/home.nix
+            # (import shared-flake)
+            ./home.nix
+          ];
+        }
+      ];
 
-  };
+    };
 }

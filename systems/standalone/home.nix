@@ -1,6 +1,11 @@
-{ config, pkgs, inputs, ... }:
 {
-  
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
+
   home.username = "martin";
   home.homeDirectory = "/home/martin";
 
@@ -13,10 +18,10 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  # Install programs 
+  # Install programs
   home.packages = [
     #docker-compose # Needs to be downloaded by pacman
-    
+
     # IMPORTANT: These need to be downloaded by system (paru / pacman / apt)
     # pkgs.mako
     # pkgs.wl-clipboard

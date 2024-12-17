@@ -1,48 +1,57 @@
-{ inputs, pkgs, config, ... }: {
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
+{
 
-#   environment.extraInit = ''
-#     export PATH=$HOME/bin:$PATH
-#   '';
+  #   environment.extraInit = ''
+  #     export PATH=$HOME/bin:$PATH
+  #   '';
 
-# install packages from nix's official package repository.
-environment.systemPackages = with pkgs; [
+  # install packages from nix's official package repository.
+  environment.systemPackages = with pkgs; [
+    # Shell
     pkgs.fish
-    pkgs.wireguard-tools
+
+    # Nix formatter
+    pkgs.nixfmt-rfc-style
     #wezterm
     mkalias
-];
+  ];
 
-
-fonts.packages = with pkgs;[
+  fonts.packages = with pkgs; [
     meslo-lgs-nf
     # pkgs.nerd-fonts.JetBrainsMono
     # Generate nerd font
     # (nerdfonts.override { fonts = [ "JetBrainsMono" ];})
-];
+  ];
 
-system.activationScripts.applications.text = let
-    env = pkgs.buildEnv {
+  system.activationScripts.applications.text =
+    let
+      env = pkgs.buildEnv {
         name = "system-applications";
         paths = config.environment.systemPackages;
         pathsToLink = "/Applications";
-    };
+      };
     in
-        pkgs.lib.mkForce ''
-            # activateSettings -u will reload the settings from the database and apply
-            # them to the current session, so we do not need to logout and login again
-            # to make the changes take effect.
-            /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
-            # Set up applications.
-            echo "setting up /Applications..." >&2
-            rm -rf /Applications/Nix\ Apps
-            mkdir -p /Applications/Nix\ Apps
-            find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-            while read -r src; do
-            app_name=$(basename "$src")
-            echo "copying $src" >&2
-            ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-            done
-            '';
+    pkgs.lib.mkForce ''
+      # activateSettings -u will reload the settings from the database and apply
+      # them to the current session, so we do not need to logout and login again
+      # to make the changes take effect.
+      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+      # Set up applications.
+      echo "setting up /Applications..." >&2
+      rm -rf /Applications/Nix\ Apps
+      mkdir -p /Applications/Nix\ Apps
+      find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
+      while read -r src; do
+      app_name=$(basename "$src")
+      echo "copying $src" >&2
+      ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+      done
+    '';
 
   # To make this work, homebrew need to be installed manually, see
   # https://brew.sh The apps installed by homebrew are not managed by nix, and
@@ -62,19 +71,19 @@ system.activationScripts.applications.text = let
     # taps = [ "CtrlSpice/homebrew-otel-desktop-viewer" ];
 
     # brew install
-    brews = [ 
+    brews = [
       "docker-compose"
       "pkg-config"
-      #"otel-desktop-viewer" 
+      #"otel-desktop-viewer"
       #"openjdk"
     ];
 
     # brew install --cask
     # these need to be updated manually
-    casks = [ 
+    casks = [
       # System tools
       "tg-pro"
-      
+
       # Dev tools
       "homebrew/cask/docker"
       "beekeeper-studio"
@@ -95,12 +104,9 @@ system.activationScripts.applications.text = let
       # Note taking
       "obsidian"
 
-
       # Entertainment
       #"battle-net"
     ];
-
-
 
     # mac app store
     # click
