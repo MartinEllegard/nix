@@ -43,6 +43,9 @@
     pkgs.dotnet-sdk_8
     pkgs.zig
 
+    # Cloud
+    pkgs.azure-cli
+
   ];
 
   home.file =
