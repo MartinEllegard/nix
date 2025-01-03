@@ -88,7 +88,7 @@
       "homebrew/cask/docker"
       "beekeeper-studio"
       "rider"
-      #"orbstack"
+      "orbstack"
       #"twingate"
 
       # Terminal (nixpkg version does not work)
@@ -98,7 +98,7 @@
       "discord"
 
       # Browser
-      #"arc"
+      "arc"
       "zen-browser"
 
       # Note taking
