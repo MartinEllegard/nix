@@ -74,6 +74,7 @@
     brews = [
       "docker-compose"
       "pkg-config"
+      "oven-sh/bun/bun"
       #"otel-desktop-viewer"
       #"openjdk"
     ];
@@ -96,6 +97,7 @@
 
       # Socials
       "discord"
+      "signal"
 
       # Browser
       "arc"
