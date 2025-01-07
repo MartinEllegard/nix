@@ -89,7 +89,6 @@
       "beekeeper-studio"
       "rider"
       "orbstack"
-      "oven-sh/bun/bun"
       #"twingate"
 
       # Terminal (nixpkg version does not work)

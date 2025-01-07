@@ -40,6 +40,7 @@
     pkgs.go # go binary
     pkgs.rustup # rust toolchain manager
     pkgs.nodejs
+    pkgs.bun # faster nodejs
     pkgs.dotnet-sdk_8
     pkgs.zig
 

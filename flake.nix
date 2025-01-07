@@ -20,6 +20,7 @@
     # };
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    # Default homebrew taps
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;
@@ -32,6 +33,8 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+    # Custom homebrew taps
+
 
     mkAlias = {
       url = "github:cdmistman/mkAlias";
@@ -114,7 +117,7 @@
             };
 
             # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
-            mutableTaps = false;
+            mutableTaps = true;
             autoMigrate = true;
           };
         }
