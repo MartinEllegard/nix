@@ -74,7 +74,6 @@
     brews = [
       "docker-compose"
       "pkg-config"
-      "oven-sh/bun/bun"
       #"otel-desktop-viewer"
       #"openjdk"
     ];
@@ -90,6 +89,7 @@
       "beekeeper-studio"
       "rider"
       "orbstack"
+      "oven-sh/bun/bun"
       #"twingate"
 
       # Terminal (nixpkg version does not work)
