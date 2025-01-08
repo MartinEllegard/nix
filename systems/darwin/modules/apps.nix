@@ -53,11 +53,6 @@
       done
     '';
 
-  # To make this work, homebrew need to be installed manually, see
-  # https://brew.sh The apps installed by homebrew are not managed by nix, and
-  # not reproducible!  But on macOS, homebrew has a much larger selection of
-  # apps than nixpkgs, especially for GUI apps!
-
   # work mac comes with brew
   homebrew = {
     enable = true;
@@ -68,11 +63,9 @@
       cleanup = "zap";
     };
 
-    # taps = [ "CtrlSpice/homebrew-otel-desktop-viewer" ];
-
     # brew install
     brews = [
-      "docker-compose"
+      # "docker-compose"
       "pkg-config"
       #"otel-desktop-viewer"
       #"openjdk"
@@ -83,13 +76,13 @@
     casks = [
       # System tools
       "tg-pro"
+      "nikitabobko/tap/aerospace"
 
       # Dev tools
-      "homebrew/cask/docker"
-      "beekeeper-studio"
-      "rider"
-      "orbstack"
-      #"twingate"
+      # "homebrew/cask/docker"
+      "beekeeper-studio" # Database GUI
+      "orbstack" # Docker alternative
+      # #"twingate"
 
       # Terminal (nixpkg version does not work)
       "wezterm"
@@ -100,13 +93,11 @@
 
       # Browser
       "arc"
-      "zen-browser"
+      # "zen-browser"
 
       # Note taking
       "obsidian"
 
-      # Entertainment
-      #"battle-net"
     ];
 
     # mac app store

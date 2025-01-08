@@ -34,6 +34,10 @@
       flake = false;
     };
     # Custom homebrew taps
+    nikitabobko-tap = {
+      url = "github:nikitabobko/homebrew-tap";
+      flake = false;
+    };
 
 
     mkAlias = {
@@ -114,10 +118,11 @@
               "homebrew/homebrew-core" = inputs.homebrew-core;
               "homebrew/homebrew-cask" = inputs.homebrew-cask;
               "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
+              "nikitabobko/homebrew-tap" = inputs.nikitabobko-tap;
             };
 
             # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
-            mutableTaps = true;
+            mutableTaps = false;
             autoMigrate = true;
           };
         }

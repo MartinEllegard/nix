@@ -20,8 +20,10 @@
   # https://github.com/NixOS/nixpkgs/blob/master/pkgs/os-specific/darwin/
   home.packages = with pkgs; [
     # Window manager
-    yabai
-    skhd
+    # INFO: This is now change to aerospace which is managed by brew
+    
+    #yabai
+    #skhd
 
     # Dev tooling
   ];
@@ -38,11 +40,12 @@
   };
 
   home.file = {
-    ".yabairc".source = ./config/yabairc;
-    ".yabairc".onChange = "/etc/profiles/per-user/martin/bin/yabai --restart-service";
-
-    ".skhdrc".source = ./config/skhdrc;
-    ".skhdrc".onChange = "/etc/profiles/per-user/martin/bin/skhd --restart-service";
+    # ".yabairc".source = ./config/yabairc;
+    # ".yabairc".onChange = "/etc/profiles/per-user/martin/bin/yabai --restart-service";
+    #
+    # ".skhdrc".source = ./config/skhdrc;
+    # ".skhdrc".onChange = "/etc/profiles/per-user/martin/bin/skhd --restart-service";
+    ".aerospace.toml".source = ./config/aerospace.toml;
   };
 
   #programs.home-manager.enable = true;

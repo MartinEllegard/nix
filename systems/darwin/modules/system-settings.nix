@@ -12,36 +12,36 @@
 
     defaults = {
       # clock
-      menuExtraClock.Show24Hour = true;
-      menuExtraClock.ShowSeconds = false;
+      # menuExtraClock.Show24Hour = true;
+      # menuExtraClock.ShowSeconds = false;
 
       # Custom User settings
       # https://medium.com/@zmre/nix-darwin-quick-tip-activate-your-preferences-f69942a93236
-      CustomUserPreferences = {
+      # CustomUserPreferences = {
 
         # Global domain settings
-        NSGlobalDomain = {
+        # NSGlobalDomain = {
           # Disable mouse acceleration
           # FIXME: Can't really get this to work
           # Every time I run darwin-rebuild switch, Pointer acceleration is enabled
-          "com.apple.mouse.scaling" = "-1";
-          "com.apple.mouse.linear" = true;
+          #"com.apple.mouse.scaling" = "-1";
+          #"com.apple.mouse.linear" = true;
 
           # Enable developer context menu for web views
-          WebKitDeveloperExtras = true;
-        };
+          #WebKitDeveloperExtras = true;
+        # };
 
-      };
+      # };
 
       # https://github.com/LnL7/nix-darwin/blob/master/modules/system/defaults/trackpad.nix
-      trackpad = {
-        # tap to click
-        Clicking = true;
-        # tap-tap-drag to drag
-        Dragging = true;
-        # two-finger-tap right click
-        TrackpadRightClick = true;
-      };
+      # trackpad = {
+      #   # tap to click
+      #   Clicking = true;
+      #   # tap-tap-drag to drag
+      #   Dragging = true;
+      #   # two-finger-tap right click
+      #   TrackpadRightClick = true;
+      # };
 
       # https://github.com/LnL7/nix-darwin/blob/master/modules/system/defaults/NSGlobalDomain.nix
       NSGlobalDomain = {
@@ -69,7 +69,7 @@
       };
 
       # Mission control spaces are seperate for each monitor
-      spaces.spans-displays = false;
+      # spaces.spans-displays = false;
 
       # https://github.com/LnL7/nix-darwin/blob/master/modules/system/defaults/finder.nix
       finder = {
