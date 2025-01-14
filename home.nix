@@ -46,6 +46,7 @@
 
     # Cloud
     pkgs.azure-cli
+    pkgs.kubectl
 
   ];
 
