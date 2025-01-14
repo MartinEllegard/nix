@@ -47,6 +47,7 @@
     # Cloud
     pkgs.azure-cli
     pkgs.kubectl
+    pkgs.helm
 
   ];
 
