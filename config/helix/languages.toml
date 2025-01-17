@@ -2,6 +2,12 @@
 # curl -sSL https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v1.39.8/omnisharp-linux-arm64.tar.gz | tar xvzf - -C ~/.omnisharp/bin/
 # make sure that we have the correct permissions
 # chmod 744 ~/.omnisharp/bin/*
+#
+# INFO: for nix remember to set npm g path in home
+# npm set prefix ~/.npm-global
+
+# INFO: npm install for frontend things
+# npm i -g @tailwindcss/language-server vscode-langservers-extracted@4.8 @fsouza/prettierd typescript typescript-language-server
 
 # Custom language-servers
 [language-server.omni-lsp]
@@ -40,10 +46,14 @@ language-servers = ["svelteserver", "tailwindcss-ls"]
 [[language]]
 name = "html"
 language-servers = ["vscode-html-language-server", "tailwindcss-ls"]
+formatter = { command = 'prettierd', args = [".html"] }
+auto-format = true
 
 [[language]]
 name = "css"
 language-servers = ["vscode-css-language-server", "tailwindcss-ls"]
+formatter = { command = 'prettierd', args = [".css"] }
+auto-format = true
 
 [[language]]
 name = "javascript"
@@ -51,6 +61,8 @@ language-servers = [
   "typescript-language-server",    # optional
   "vscode-eslint-language-server",
 ]
+formatter = { command = 'prettierd', args = [".js"] }
+auto-format = true
 
 [[language]]
 name = "typescript"
@@ -58,11 +70,17 @@ language-servers = [
   "typescript-language-server",
   "vscode-eslint-language-server",
 ]
+formatter = { command = 'prettierd', args = [".ts"] }
+auto-format = true
 
 [[language]]
 name = "jsx"
 language-servers = ["typescript-language-server", "tailwindcss-ls"]
+formatter = { command = 'prettierd', args = [".jsx"] }
+auto-format = true
 
 [[language]]
 name = "tsx"
 language-servers = ["typescript-language-server", "tailwindcss-ls"]
+formatter = { command = 'prettierd', args = [".tsx"] }
+auto-format = true
