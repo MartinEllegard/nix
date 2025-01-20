@@ -49,7 +49,7 @@
     # Cloud
     pkgs.azure-cli
     pkgs.kubectl
-    pkgs.helm
+    #pkgs.helm # Not available on mac arm
 
   ];
 
