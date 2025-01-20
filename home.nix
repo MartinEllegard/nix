@@ -22,6 +22,7 @@
 
     # Terminal utils
     pkgs.tmux # terminal multiplexer
+    pkgs.yazi # file manager
     pkgs.ripgrep # better grep
     pkgs.eza # better ls
     pkgs.fd
@@ -30,6 +31,7 @@
     pkgs.zoxide # cd replacement
     pkgs.gh # github cli
     pkgs.unzip
+    pkgs.bat # better cat
 
     # Resource monitor
     pkgs.btop

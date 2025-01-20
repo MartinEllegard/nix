@@ -90,6 +90,7 @@
       # Socials
       "discord"
       "signal"
+      "microsoft-teams"
 
       # Browser
       "arc"
@@ -97,7 +98,6 @@
 
       # Note taking
       "obsidian"
-
     ];
 
     # mac app store
