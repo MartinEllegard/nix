@@ -10,14 +10,21 @@
 # npm i -g @tailwindcss/language-server vscode-langservers-extracted@4.8 @fsouza/prettierd typescript typescript-language-server
 
 # Custom language-servers
+# Go
+[language-server.gopls.config]
+gofumpt = true
+
+# C#
 [language-server.omni-lsp]
 command = "dotnet"
 args = ["/Users/martin/.omnisharp/bin/OmniSharp.dll", "--languageserver"]
 
+# Tailwind
 [language-server.tailwindcss-ls]
 command = "tailwindcss-language-server"
 args = ["--stdio"]
 
+# Python
 [language-server.ruff]
 command = "ruff-lsp"
 [language-server.ruff.config.settings]
@@ -30,6 +37,10 @@ args = ["--ignore", "E501"]
 typeCheckingMode = "basic"
 
 # Language serverver specifications
+[[language]]
+name = "go"
+auto-format = true
+
 [[language]]
 name = "python"
 language-servers = ["pyright", "ruff"]

@@ -26,6 +26,7 @@ alias cd='z'
 # alias .5='cd ../../../../..'
 
 alias v="fd --type f --hidden --exclude .git --exclude node_modules | fzf-tmux -p --reverse | xargs nvim"
+alias fedit="fd --type f --hidden --exclude .git --exclude node_modules | fzf-tmux -p --reverse | xargs hx"
 
 ## Software update
 if test "$os" = Darwin
