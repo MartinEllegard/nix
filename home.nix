@@ -74,9 +74,10 @@
       # Neovim config
       ".config/nvim/lua".source = ./config/nvim/lua;
       ".config/nvim/init.lua".source = ./config/nvim/init.lua;
-      ".config/nvim/LICENSE".source = ./config/nvim/LICENSE;
-      ".config/nvim/stylua.toml".source = ./config/nvim/stylua.toml;
-      ".config/nvim/.neoconf.json".source = ./config/nvim/.neoconf.json;
+      ".config/nvim/.stylua.toml".source = ./config/nvim/.stylua.toml;
+      # ".config/nvim/.neoconf.json".source = ./config/nvim/.neoconf.json;
+
+      # Helix
       ".config/helix".source = ./config/helix;
 
       # Wezterm
