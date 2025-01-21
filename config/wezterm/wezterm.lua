@@ -7,7 +7,7 @@ elseif theme == "gruvbox" then
 	theme = "Gruvbox dark, medium (base16)"
 end
 
-local transparency = os.getenv("TRANSPARENCY") or "true"
+local transparency = os.getenv("TRANSPARENCY") or "false"
 local opacity = 1.0
 if transparency == "true" then
 	opacity = 0.95
