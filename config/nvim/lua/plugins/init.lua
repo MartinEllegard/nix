@@ -22,6 +22,7 @@ return {
         "vimdoc",
         "html",
         "css",
+        "go",
         "javascript",
         "typescript",
       },
