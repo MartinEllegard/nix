@@ -67,6 +67,7 @@
     brews = [
       # "docker-compose"
       "pkg-config"
+      "octant" # kubernetes dashboard
       #"otel-desktop-viewer"
       #"openjdk"
     ];
