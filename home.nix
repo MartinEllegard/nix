@@ -75,6 +75,7 @@
       # Nu Shell
       ".config/nushell/config.nu".source = ./config/nushell/config.nu;
       ".config/nushell/env.nu".source = ./config/nushell/env.nu;
+      ".config/nushell/aliases.nu".source = ./config/nushell/aliases.nu;
 
       # Neovim config
       ".config/nvim/lua".source = ./config/nvim/lua;
