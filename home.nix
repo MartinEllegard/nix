@@ -25,13 +25,14 @@
     pkgs.yazi # file manager
     pkgs.ripgrep # better grep
     pkgs.eza # better ls
-    pkgs.fd
+    pkgs.fd # also better ls??
     pkgs.fzf # fuzzy finder
     pkgs.jq # json parser
     pkgs.zoxide # cd replacement
     pkgs.gh # github cli
     pkgs.unzip
     pkgs.bat # better cat
+    pkgs.carapace
 
     # Resource monitor
     pkgs.btop
