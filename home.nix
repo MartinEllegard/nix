@@ -72,6 +72,10 @@
       ".config/fish/conf.d/eza.fish".source = ./config/fish/conf.d/eza.fish;
       ".config/fish/functions/eza_git.fish".source = ./config/fish/functions/eza_git.fish;
 
+      # Nu Shell
+      ".config/nushell/config.nu".source = ./config/nushell/config.nu;
+      ".config/nushell/env.nu".source = ./config/nushell/env.nu;
+
       # Neovim config
       ".config/nvim/lua".source = ./config/nvim/lua;
       ".config/nvim/init.lua".source = ./config/nvim/init.lua;
