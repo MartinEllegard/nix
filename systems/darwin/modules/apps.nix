@@ -14,6 +14,7 @@
   environment.systemPackages = with pkgs; [
     # Shell
     pkgs.fish
+    pkgs.nushell
 
     # Nix formatter
     pkgs.nixfmt-rfc-style
@@ -67,7 +68,6 @@
     brews = [
       # "docker-compose"
       "pkg-config"
-      "octant" # kubernetes dashboard
       #"otel-desktop-viewer"
       #"openjdk"
     ];

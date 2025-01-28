@@ -98,6 +98,7 @@
 
   environment.shells = [
     pkgs.fish
+    pkgs.nushell
   ];
 
   # load env vars set via home manager
