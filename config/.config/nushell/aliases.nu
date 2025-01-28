@@ -4,10 +4,17 @@ alias c = clear
 alias ll = ls -l
 alias lt = eza --tree --level=2 --long --icons --git
 alias v = nvim
+
+#alias update-os = "sudo pacman -Syu; cd ~/nix; stow config -t ~/; home-manager switch --flake ~/nix" 
 #alias hms = home-manager switch
 #alias as = aerospace
 
-
+alias cd = z
+alias v = fd --type f --hidden --exclude .git --exclude node_modules | fzf-tmux -p --reverse | xargs nvim
+#vim
+alias vi = nvim
+alias vim = nvim
+alias svi = sudo nvim
 # Git
 alias gc = git commit -m
 alias gca = git commit -a -m

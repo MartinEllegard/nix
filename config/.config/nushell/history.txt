@@ -1,0 +1,54 @@
+nvim .
+cd ../
+ls
+ls -a
+nvim .
+mkdir config
+mv .config config 
+ls
+cd config/
+ls
+cd ../
+ls
+ls -a
+cp .tmux.conf config/
+ls config
+cd config/
+ls
+ls -a
+nvim .
+cd .config/
+ls
+ls -a
+rm .tmux.conf
+ls
+ls -a
+cd ../../
+ls
+stow config
+sl
+ls
+cd ls
+cd ../
+ls
+ls -a
+cd .config/
+ls
+ll
+q
+:q
+cd 
+cd nix/
+ls
+nvim .
+cd 
+os-update
+cd ~/nix/
+nvim .
+z ls
+cd nix
+cd git
+cd ~/git/
+ls
+cd nix
+ls

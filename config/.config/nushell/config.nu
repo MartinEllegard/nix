@@ -901,4 +901,6 @@ source ~/.config/nushell/env.nu
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
 #source ~/.local/share/atuin/init.nu
+source ($nu.default-config-dir | path join 'aliases.nu')
+
 use ~/.cache/starship/init.nu

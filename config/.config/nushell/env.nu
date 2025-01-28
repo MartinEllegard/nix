@@ -112,7 +112,6 @@ $env.PATH = ($env.PATH | uniq)
 
 
 # To load from a custom file you can use:
-source ($nu.default-config-dir | path join 'aliases.nu')
 
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu

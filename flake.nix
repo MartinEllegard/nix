@@ -73,6 +73,7 @@
       diskoConfigurations.brtfs-dual = import ./disk-config.nix;
       # Home manager standalone systems aka non nixOs linux
       homeConfigurations."martin" = home-manager.lib.homeManagerConfiguration {
+
         inherit (inputs.nixpkgs.legacyPackages."x86_64-linux") pkgs;
         modules = [
           # Shared home module
@@ -82,7 +83,6 @@
           # Linux specific home module
           ./systems/standalone/home.nix
         ];
-
       };
 
       # Output darwin Configuration

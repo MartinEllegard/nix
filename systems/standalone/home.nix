@@ -37,11 +37,11 @@
   ];
 
   programs = {
-    git = {
-      enable = true;
-      userName = "Martin Ellegård";
-      userEmail = "martin.ellegard@gmail.com";
-    };
+    # git = {
+    #   enable = true;
+    #   userName = "Martin Ellegård";
+    #   userEmail = "martin.ellegard@gmail.com";
+    # };
     home-manager.enable = true;
   };
 
