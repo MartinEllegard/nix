@@ -94,8 +94,8 @@
       "microsoft-teams"
 
       # Browser
-      "arc"
-      # "zen-browser"
+      #"arc"
+      "zen-browser"
 
       # Note taking
       "obsidian"

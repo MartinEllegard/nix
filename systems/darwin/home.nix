@@ -45,7 +45,7 @@
     #
     # ".skhdrc".source = ./config/skhdrc;
     # ".skhdrc".onChange = "/etc/profiles/per-user/martin/bin/skhd --restart-service";
-    ".aerospace.toml".source = ./config/aerospace.toml;
+    # ".aerospace.toml".source = ./config/aerospace.toml;
   };
 
   #programs.home-manager.enable = true;
