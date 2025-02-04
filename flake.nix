@@ -14,11 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # disko = {
-    #   url = "github:nix-community/disko/make-disk-image";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     # Default homebrew taps
     homebrew-core = {
@@ -53,7 +48,6 @@
       nixpkgs,
       nix-homebrew,
       home-manager,
-      disko,
       ...
     }@inputs: # shared-flake
     let
@@ -70,7 +64,6 @@
 
     in
     {
-      diskoConfigurations.brtfs-dual = import ./disk-config.nix;
       # Home manager standalone systems aka non nixOs linux
       homeConfigurations."martin" = home-manager.lib.homeManagerConfiguration {
 

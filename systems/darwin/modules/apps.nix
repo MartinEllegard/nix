@@ -13,11 +13,11 @@
   # install packages from nix's official package repository.
   environment.systemPackages = with pkgs; [
     # Shell
-    pkgs.fish
-    pkgs.nushell
+    fish
+    nushell
 
     # Nix formatter
-    pkgs.nixfmt-rfc-style
+    nixfmt-rfc-style
     #wezterm
     mkalias
   ];
