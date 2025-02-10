@@ -40,7 +40,7 @@
     pkgs.carapace
 
     # Resource monitor
-    pkgs.btop
+    # pkgs.btop
     pkgs.bottom
 
     # Dev
@@ -53,7 +53,7 @@
     pkgs.zig
 
     # Cloud
-    pkgs.azure-cli
+    # pkgs.azure-cli
     pkgs.kubectl
     pkgs.stow
     #pkgs.helm # Not available on mac arm
