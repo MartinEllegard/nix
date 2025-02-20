@@ -99,6 +99,7 @@
 
       # Note taking
       "obsidian"
+      "ghostty"
     ];
 
     # mac app store
